@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Configurações de Conexão com o Banco de Dados -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/application?useTimezone=true&amp;serverTimezone=UTC</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">$Pr!ngf!3ld</property>
+
+		<!-- Pool de Conexões -->
+		<property name="connection.pool_size">1</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		
+		<!-- Mapeamento das entidades -->
+		<mapping class="br.com.application.domain.Cidade" />
+		<mapping class="br.com.application.domain.Cliente" />
+		<mapping class="br.com.application.domain.Estado" />
+		<mapping class="br.com.application.domain.Fabricante" />
+		<mapping class="br.com.application.domain.Funcionario" />
+		<mapping class="br.com.application.domain.ItemVenda" />
+		<mapping class="br.com.application.domain.Pessoa" />
+		<mapping class="br.com.application.domain.Produto" />
+		<mapping class="br.com.application.domain.Usuario" />
+		<mapping class="br.com.application.domain.Venda" />
+		<mapping class="br.com.application.domain.Historico" />
+		<mapping class="br.com.application.domain.Caixa" />
+		<mapping class="br.com.application.domain.Movimentacao" />
+		<mapping class="br.com.application.domain.Menu" />
+	</session-factory>
+
+</hibernate-configuration>
