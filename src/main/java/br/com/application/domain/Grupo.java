@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -17,7 +18,11 @@ public class Grupo extends GenericDomain {
 	@JoinTable(name = "grupo_permissao", joinColumns = @JoinColumn(name="grupo_id"),
 			inverseJoinColumns = @JoinColumn(name = "permissao_id"))
 	private List<Permissao> permissoes;
+	
+	@Column(nullable=false, length=80)
 	private String descricao;
+	
+	@Column(nullable=false, length=40)
 	private String nome;
 	
 	public Grupo() {
